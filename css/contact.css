@@ -1,0 +1,51 @@
+@import url('vars.css');
+:root {
+    --link: rgb(191, 19, 214);
+    --linkH: rgb(219, 100, 255);
+}
+main {
+    padding-top: 3em;
+}
+#contact ul {
+    list-style: none;
+    width: 90%;
+    padding: .7em;
+    margin: auto;
+    color: var(--text);
+    font-size: .9em;
+    
+}
+#contact>ul {
+    border: .1rem solid var(--link);
+    border-radius: .1rem;
+    margin: 2em auto;
+}
+#contact>ul>li+li:nth-child(2) i {
+    color: var(--link);
+}
+#contact>ul>li {
+    border-bottom: solid .2rem var(--link);
+    margin-bottom: 1em;
+}
+#contact h3::after {
+    background-image: url("../img/proj.jpg");
+}
+#contact li {
+    padding: .5em;
+    margin-left: 1em;
+}
+#contact ul ul {
+    margin: 0;
+}
+#contact a, #contact a:visited {
+    color: var(--link);
+}
+#contact a:hover {
+    color: var(--linkH);
+}
+@media screen and (min-width: 1000px) {
+    #contact ul {
+        font-size: 1.1em;
+        width: 40%;
+    }
+}

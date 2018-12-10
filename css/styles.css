@@ -1,0 +1,442 @@
+@import url('https://use.fontawesome.com/releases/v5.4.2/css/all.css');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Oxygen');
+@import url('vars.css');
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--back);
+}
+/*GLOBAL*/
+a, a:visited {
+    color: #000;
+    text-decoration: none;
+    transition: all .3s;
+}
+.sel, .sel:visited, .sel:hover {
+    color: var(--link);
+    text-shadow: 0 0 1em #000; 
+}
+/*HEADER*/
+header {
+    z-index: 100;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 100%;
+    padding: .3em 5% .5em;
+    background: rgba(5, 5, 5, 0.192);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: .1em rgba(0, 0, 0, 0.123) solid;
+}
+header>* {
+    color: rgba(255, 255, 255, 0.849);
+    font-weight: 200;
+}
+header>i {
+    order: 1;
+    font-size: 1.85em;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all .3s;
+}
+header>h1 {
+    order: 2;
+    text-transform: uppercase;
+    margin: 0 1em;
+    font-size: 1.9em;
+    font-family: 'Oxygen', sans-serif;
+    vertical-align: middle;
+}
+header>h1>a, header>h1>a:visited {
+    color: inherit;
+}
+
+.fa-adjust {
+    margin-right: .5em;
+    animation: 5s rt infinite linear;
+    display: none;
+}
+@keyframes rt {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.show>i {
+    transform: rotateY(180deg) skewY(25deg);
+}
+/*NAV*/
+nav {
+    background: rgba(5, 5, 5, 0.555);
+    width: 11em;
+    height: 100%;
+    position: fixed;
+    left: -14em;
+    transition: all .3s;
+    z-index: 10;
+    margin: 0;
+    padding: 4em 0 0 0;
+    z-index: 200;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+nav li {
+    list-style: none;
+    width: 100%;
+}
+nav a, nav a:visited {
+    color: #fff;
+    font-size: 1.2em;
+    width: calc(100% - 1.6em);
+    display: block;
+    padding: .5em .8em;
+    transition: all .3s;
+}
+nav a:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+nav a::after {
+    content: "-";
+    margin-top: .3em;
+    display: block;
+    width: 0%;
+    height: .1em;
+    background: rgba(255, 255, 255, 0.89);
+    overflow: hidden;
+    transition: all .3s;
+}
+nav a:hover::after {
+    width: 100%;
+}
+#backNav {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.408);
+    transition: all .3s;
+}
+#backNav.showBack {
+    display: block;
+}
+.showNav {
+    left: 0;
+}
+/*WELCOME*/
+.pres-main {
+    width: 100%;
+    color: rgb(210, 220, 226);
+    height: 10vh;
+    text-align: center;
+    overflow: hidden;
+    font-family: "Oxygen";
+    border-bottom: solid .5em rgb(32, 32, 32);
+}
+#welcome {
+    background: linear-gradient(to top left,  rgb(5, 141, 175) 200px, 
+    rgb(14, 163, 201) 201px, 
+    rgb(14, 163, 201) 300px,
+    rgb(22, 176, 214) 301px,
+    rgb(22, 176, 214) 350px, 
+    rgb(27, 27, 27) 351px);
+    padding: 45vh 0;
+}
+h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    display: inline;
+}
+#welcome>ul, #welcome>ul * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+#welcome>ul {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 1.05em;
+    overflow-y: hidden;
+    font-style: normal;
+    list-style: none;
+    display: block;
+    width: 10em;
+    text-align: center;
+    margin: auto;
+}
+#welcome>ul>li {
+    position: relative;
+    height: 1.5em;
+    animation: car 5s infinite; 
+}
+@keyframes car {
+    0% {top: 0;}
+    20%{top: 0;}
+    30% {top: -1.5em;}
+    55%{top: -1.5em;}
+    65%{top: -3em;}
+    90% {top: -3em;}
+    100% {top: 0;}
+}
+.pres-grid {
+    font-size: 2em;
+    text-align: center;
+}
+.pres-grid>div {
+    display: grid;
+    border-top: solid .5rem rgb(32, 32, 32);
+}
+.pres-grid p {
+    color: var(--text);
+    font-size: .5em;
+}
+h3, h4 {
+    font-family: "Oxygen";
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: var(--text);
+    padding: 0;
+    margin: 0;
+}
+h3 {
+    padding: .8em 0;
+}
+h3 {
+    font-size: 3rem;
+    background: linear-gradient(-17deg, 
+    rgb(22, 22, 22,0.1) 0, rgb(22, 22, 22,0.1) 150px,
+    transparent 151px);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+h3::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 10rem;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    filter: blur(.08em);
+    /*as firefox breaks if we scale the background*/
+    transform: scale(1.1);
+    -moz-transform: none;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.pres-grid section {
+    padding: 2em;
+    background: linear-gradient(to top left, rgba(90, 90, 90, 0.1) 0, 
+    rgba(90, 90, 90, 0.1) 250px, transparent 251px);
+} 
+
+#about h3::after {
+    background-image: url("../img/about.jpg")
+}
+
+
+.pres-grid>section {
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    border-top: solid .5rem rgb(32, 32, 32);
+}
+.pres-grid>section>p {
+    width: 70%;
+    padding: 1em 15%;
+    margin: 0;
+}
+
+.pres-grid>section>h4 {
+    margin-top: .8em;
+}
+.pres-grid figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    grid-row: 1 / 1000;
+    overflow: hidden;
+    
+}
+.pres-grid img {
+    width:100%;
+    margin-top: -30em;
+    padding: 0;
+    margin:0;
+    object-fit: cover;
+    object-position: center;
+    height: 10em;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+.pres-grid figure::after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 10em;
+    left: 0;
+    top: 0; 
+}
+figcaption {
+    display: none;
+}
+.pres-grid ul {
+    color: var(--text);
+    list-style: square;
+    max-width: 500px;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 1rem;
+    width: fit-content;
+    padding: 1em 0;
+}
+.pres-grid figure::after {
+    background: linear-gradient(to top, rgb(19, 19, 19, .7),
+    rgb(19, 19, 19, .2), rgb(19, 19, 19, .7));
+}
+.pres-grid a {
+    color: var(--link);
+    transition: all .3s;
+}
+.pres-grid a:hover {
+    color: var(--linkH);
+}
+
+footer {
+    display: grid;
+    border-top: .5em solid var(--link);
+    padding: 2em;
+    text-align: center
+}
+footer>ul {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+}
+footer a {padding: 0;}
+footer li {
+    display: inline;
+    font-size: 1.5em;
+}
+footer li * {
+    color: var(--text);
+    padding: 0 .3em;
+}
+footer small {
+    padding: .817em 0;
+    color: #696969;
+    font-size: .8em;
+}
+footer h5 {
+    color: var(--text);
+    padding: .5em;
+    margin: 0;
+    font-size: 1.3em;
+    font-family: 'Oxygen';
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 800px) {
+
+    #welcome>ul {
+        display: inline-block;
+        text-align: left;
+        width: auto;
+        margin: 0;
+    }    
+
+}
+@media screen and (min-width: 1000px) {
+
+    nav, .showNav {
+        left: auto;
+        right: 5%;
+        background: transparent;
+        width: 34em;
+        padding: 0;
+        height: auto;
+    }
+    nav a:hover {
+        background: transparent;
+    }
+    nav a, nav a:visited, nav li {
+        display: inline-block;
+    }
+    nav li {
+        padding: 0 1em;
+        width: initial;
+    }
+    nav a {
+        width: auto;
+        padding: .7em 0;
+    }
+    .fa-bars {
+        display: none;
+    }
+    .fa-adjust {
+        display: inline-block;
+    }
+    #backNav {
+        display: none !important;
+    }
+
+    header a::after {
+        content: "Moynihan";
+    }
+    .pres-grid>h3 {
+        background: linear-gradient(-17deg,
+        rgb(22, 22, 22,0.1) 0, rgb(22, 22, 22,0.1) 250px,
+        transparent 251px);
+    }
+    .pres-grid h4 {
+        padding: .55em 0;
+    }
+    .pres-grid>section {
+        display: grid;
+        height: 9em;
+        grid-template-columns: 50% 50%;
+    }
+    .pres-grid>section:nth-child(even)>figure {
+        grid-column: 1;
+    }
+    .pres-grid>section:nth-child(odd)>figure {
+        grid-column: 2;
+    }
+    .pres-grid>section:nth-child(even)>figure::after {
+        background: linear-gradient(to left, rgb(19, 19, 19), transparent);
+    }
+    .pres-grid>section:nth-child(odd)>figure::after {
+        background: linear-gradient(to right, rgb(19, 19, 19), transparent);
+    }
+    .pres-grid>section:nth-child(even) {
+        background: linear-gradient(-20deg, rgba(90, 90, 90, 0.08) 0, 
+        rgba(90, 90, 90, 0.08) 250px, transparent 251px);
+    }
+    .pres-grid>section:nth-child(odd) {
+        background: linear-gradient(20deg, rgba(90, 90, 90, 0.08) 0, 
+        rgba(90, 90, 90, 0.08) 250px, transparent 251px);
+    }
+    .pres-grid figure {
+        clip-path: none;
+    }
+    footer h5 {
+        padding: 0;
+    }
+    footer li:nth-child(3) {
+        margin-left: 8em;
+    }
+    footer ul {
+        margin-top: -1.65em; 
+    }
+}

@@ -1,0 +1,85 @@
+:root {
+    --link: rgb(214, 19, 19);
+    --linkH: rgb(255, 44, 44);
+}
+main {
+    padding-top: 3em;
+}
+#education h3::after {
+    background-image: url("../img/proj.jpg")
+}
+h4>a, h4>a:visited {
+    color: var(--text);
+}
+.pres-grid>section img {
+    object-position: top;
+}
+table {
+    width: 60%;
+    margin: auto;
+    color: var(--text);
+    font-size: .85em;
+    border: .2em var(--text) solid;
+    border-collapse: collapse;
+    border-bottom-right-radius: .4em;
+    border-bottom-left-radius: .4em;
+    text-align: center;
+    background-color: rgba(24, 24, 24, 0.363);
+    box-shadow: 0 0 8em 0em rgba(0, 0, 0, 0.301);
+    margin-bottom: 2em;
+}
+tr, th, td {
+    padding: .5em;
+}
+th {
+    border-bottom: .2rem var(--text) solid;
+    border-left: .2rem var(--text) solid;
+    color: var(--linkH);
+    text-transform: uppercase;
+}
+td {
+    border-bottom: .2rem var(--text) solid;
+    border-left: .2rem var(--text) solid;
+    font-size: .8em;
+}
+td[rowspan] {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+aside {
+    width: 90%;
+    font-size: .8em;
+    padding: 2.5rem .5rem;
+    color: var(--text);
+    margin: 3rem auto;
+    background: rgb(14, 14, 14);
+    border-radius: .4rem;
+    border: .1rem var(--linkH) solid;
+}
+
+caption {
+    background: var(--text);
+    color: var(--back);
+    text-transform: uppercase;
+    padding: .4em;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 2em;
+    border-top-left-radius: .4em;
+    border-top-right-radius: .4em;
+    padding-top: .6em;
+}
+
+@media screen and (min-width: 1000px) {
+    aside {
+        width: 50%;
+        font-size: 1rem;
+        padding: 2.5rem 2rem;
+    }
+    table {
+        font-size: 1.2em;
+        width: 70%;
+    }
+}

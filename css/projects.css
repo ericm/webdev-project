@@ -1,0 +1,29 @@
+@import url('vars.css');
+:root {
+    --link: rgb(19, 214, 19);
+    --linkH: rgb(44, 255, 44);
+}
+main {
+    padding-top: 3em;
+}
+#projects h3::after {
+    background-image: url("../img/proj.jpg");
+}
+h4>a, h4>a:visited {
+    text-shadow: 0 0 .7em #000000;
+}
+/*For special cases*/
+.pres-grid>section:nth-of-type(1) img {
+    object-position: top;
+}
+@media screen and (min-width: 1000px) {
+    .pres-grid>section {
+        height: 10em;
+    }
+    .pres-grid img {
+        height: 12em;
+    }
+    .pres-grid figure::after {
+        height: 13em;
+    }
+}
